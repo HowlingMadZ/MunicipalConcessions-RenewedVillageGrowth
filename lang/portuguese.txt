@@ -1,0 +1,172 @@
+##### MUNICIPAL STATION CONCESSIONS #####
+STR_STATISTICS_TOWN_SLOTS		:{BLACK}Concessões municipais ({NUM} disponíveis)
+STR_TOWN_SLOT_UNLOCKED		:{BLACK}A sua empresa obteve {NUM} nova(s) concessão(ões) municipal(is)! Agora pode operar em até {NUM} cidades.
+STR_TOWN_SLOT_UNAUTHORIZED		:{BLACK}Sem concessão para {TOWN}! Esta estação será demolida em {NUM} minuto(s). Sem concessões disponíveis.
+STR_TOWN_SLOT_CLAIMED		:{BLACK}{COMPANY} obteve uma concessão municipal em {TOWN}!
+STR_TOWN_SLOT_UNAUTHORIZED_INSTANT	:{BLACK}Sem concessão para {TOWN}! Esta estação foi demolida. Sem concessões disponíveis.
+STR_TOWN_SLOT_RELEASED		:{BLACK}A sua concessão municipal em {TOWN} expirou — não restam estações na zona.
+
+##### TOWN SIGN #####
+STR_TOWNSIGN_GROWTHRATE  :Crescimento : {NUM} {STRING}
+STR_TOWNSIGN_MONTHS      :meses
+STR_TOWNSIGN_DAYS        :dias
+STR_TOWNSIGN_MINUTES     :minutos
+STR_TOWNSIGN_SECONDS     :segundos
+STR_TOWNSIGN_NOTGROWING  :Sem crescimento
+
+##### CARGO CATEGORIES #####
+STR_CARGOCAT_LABEL_0     :Serviços públicos
+STR_CARGOCAT_LABEL_1     :Materiais de crescimento
+STR_CARGOCAT_LABEL_2     :Matérias-primas
+STR_CARGOCAT_LABEL_3     :Materiais processados
+STR_CARGOCAT_LABEL_4     :Produtos finais
+STR_CARGOCAT_LABEL_5     :Produtos
+STR_CARGOCAT_LABEL_6     :Produção local
+STR_CARGOCAT_LABEL_7     :Bens importados
+STR_CARGOCAT_LABEL_8     :Categoria I
+STR_CARGOCAT_LABEL_9     :Categoria II
+STR_CARGOCAT_LABEL_10    :Categoria III
+STR_CARGOCAT_LABEL_11    :Categoria IV
+STR_CARGOCAT_LABEL_12    :Materiais avançados
+STR_CARGOCAT_LABEL_13    :Matérias-primas e alimentos
+STR_CARGOCAT_LABEL_14    :Materiais refinados
+STR_CARGOCAT_LABEL_15    :Componentes de fabrico
+STR_CARGOCAT_LABEL_16    :Produtos acabados e veículos
+
+##### STORY BOOK #####
+STR_SB_TITLE_1           :Categorias de carga
+STR_SB_EXPLAIN_1         :Estas são as categorias de carga para os requisitos da cidade, cada categoria inclui diferentes tipos de carga. Para cumprir os requisitos de uma categoria, pode entregar qualquer carga que pertença a ela.
+STR_SB_EXPLAIN_2         :Estas são as categorias de carga para os requisitos da cidade, cada categoria inclui diferentes tipos de carga. Cada cidade tem uma seleção de {STRING} de cada categoria. Para cumprir os requisitos de uma categoria, pode entregar qualquer carga que a cidade requeira para essa categoria conforme mostrado na janela de informação da cidade.
+STR_SB_EXPLAIN_RANDOM_0  :{SILVER}{NUM} tipo{P "" s} de carga{BLACK}{STRING}
+STR_SB_EXPLAIN_RANDOM_2  :{SILVER}{NUM} - {NUM} tipos de carga {BLACK}
+STR_SB_CARGOCAT_CAT      :Categoria
+STR_SB_CARGOCAT_POP      :População mínima da cidade
+STR_SB_CARGOCAT_DECAY    :Deterioração mensal
+STR_SB_CARGOCAT_CARGOT   :Tipos de carga
+STR_SB_CARGOCAT_0        :{STRING} {NUM} : {LTBLUE}{STRING}{BLACK}{}{STRING} : {SILVER}{NUM}{BLACK} {STRING} : {SILVER}{NUM}%{BLACK}{}{STRING} : {CARGO_LIST}
+STR_SB_CARGOCAT_1        :{STRING} {NUM} : {GREEN}{STRING}{BLACK}{}{STRING} : {SILVER}{NUM}{BLACK} {STRING} : {SILVER}{NUM}%{BLACK}{}{STRING} : {CARGO_LIST}
+STR_SB_CARGOCAT_2        :{STRING} {NUM} : {RED}{STRING}{BLACK}{}{STRING} : {SILVER}{NUM}{BLACK} {STRING} : {SILVER}{NUM}%{BLACK}{}{STRING} : {CARGO_LIST}
+STR_SB_CARGOCAT_3        :{STRING} {NUM} : {BROWN}{STRING}{BLACK}{}{STRING} : {SILVER}{NUM}{BLACK} {STRING} : {SILVER}{NUM}%{BLACK}{}{STRING} : {CARGO_LIST}
+STR_SB_CARGOCAT_4        :{STRING} {NUM} : {PURPLE}{STRING}{BLACK}{}{STRING} : {SILVER}{NUM}{BLACK} {STRING} : {SILVER}{NUM}%{BLACK}{}{STRING} : {CARGO_LIST}
+STR_SB_CARGOCAT_5        :{STRING} {NUM} : {YELLOW}{STRING}{BLACK}{}{STRING} : {SILVER}{NUM}{BLACK} {STRING} : {SILVER}{NUM}%{BLACK}{}{STRING} : {CARGO_LIST}
+STR_SB_WARNING_TITLE     :Aviso
+STR_SB_WARNING_1         :Há mais cidades no mapa do que o script consegue guardar. O número atual de cidades é {SILVER}{NUM}{BLACK} e o máximo é {SILVER}{NUM}{BLACK}. {RED}O script de jogo está desativado.{BLACK}
+STR_SB_WARNING_2         :A inicialização da lista de cargas falhou. Foi causado por um newGRF de indústria desconhecido para o qual não foi possível criar uma lista de cargas procedural. {RED}O script de jogo está desativado.{BLACK}
+STR_SB_WARNING_3         :A inicialização da lista de cargas falhou. Foi causado pela opção de aleatorização de indústrias para a qual não foi possível criar as categorias de indústria procedurais. {RED}O script de jogo está desativado.{BLACK}
+STR_SB_WARNING_4         :Deve definir o parâmetro {ORANGE}Ambiente->Cidades->Velocidade de crescimento das cidades{BLACK} para algo diferente de Nenhum. {RED}O script de jogo está desativado.{BLACK}
+STR_SB_WELCOME_TITLE     :Renewed Village Growth {NUM}.{NUM}
+STR_SB_WELCOME_DESC      :{SILVER}Renewed Village Growth (RVG){BLACK} é um script de jogo que {ORANGE}muda a forma como as cidades crescem{BLACK} no OpenTTD. Vários requisitos de carga são definidos para cada cidade que precisam ser - parcial ou completamente - satisfeitos mensalmente para fazer as cidades crescerem mais rápido. Mais informações podem ser encontradas no {ORANGE}ficheiro Readme{BLACK}.
+STR_SB_WELCOME_CARGO     :A economia {SILVER}{STRING}{BLACK} consiste em {SILVER}{NUM} categorias{BLACK}. Para cumprir uma categoria, entregue uma ou mais das cargas específicas da categoria a uma {ORANGE}estação perto da cidade que aceite esse tipo de carga{BLACK}. Cumpra os requisitos acima de {SILVER}{NUM}%{BLACK} para {ORANGE}fazer as cidades crescerem mais rápido{BLACK}. Mais informações sobre as categorias de carga são mostradas na {ORANGE}página de categorias de carga do livro de história{BLACK}.
+STR_SB_WELCOME_LIMIT_GROWTH         :{SILVER}{CARGO_LIST}{BLACK} dessa cidade podem {ORANGE}parar o crescimento da cidade{BLACK}. Transporte pelo menos {SILVER}{NUM}%{BLACK} desses tipos de carga para {ORANGE}permitir o crescimento da cidade{BLACK}. {STRING}
+STR_SB_WELCOME_LIMIT_GROWTH_DELAY   :O crescimento para após {SILVER}{NUM} meses{BLACK} sem cumprir este requisito.
+STR_SB_WELCOME_STATISTICS           :A empresa que fornece a maioria da carga a uma cidade torna-se o seu {ORANGE}Contribuidor{BLACK}. Cada nova população acima da maior população dessa cidade conta como {ORANGE}pontos de crescimento{BLACK} dessa empresa. Consulte os pontos de crescimento e estatísticas na {ORANGE}Lista de objetivos{BLACK}.
+STR_SB_WELCOME_ETERNAL_LOVE         :{SILVER}Amor Eterno{BLACK} altera a {ORANGE}avaliação da autoridade local{BLACK} de cada cidade uma vez por mês para pelo menos {SILVER}{STRING}{BLACK}.
+STR_SB_WELCOME_END                  :Divirta-se!
+
+##### CUSTOM STORY BOOK #####
+STR_SB_CUSTOM_WELCOME       :Consulte as regras do servidor na {ORANGE}página {STRING} do livro de história{BLACK}.
+STR_SB_CUSTOM_TITLE         :Regras do servidor
+# STR_SB_CUSTOM_1             :Regra 1
+# STR_SB_CUSTOM_2             :Regra 2
+STR_SB_CUSTOM_END           :
+
+##### GOAL #####
+STR_STATISTICS_GROWTH_POINTS    :{STRING}{COMPANY}{BLACK} pontos de crescimento{ORANGE}
+STR_STATISTICS_BIGGEST_TOWN     :{BLACK}Maior cidade {SILVER}{TOWN}{ORANGE}
+STR_STATISTICS_GROWTH_TOWN      :{BLACK}Cidade de crescimento mais rápido em dias {SILVER}{TOWN}{ORANGE}
+STR_STATISTICS_AVERAGE_CATEGORY :{BLACK}Categoria média da cidade{ORANGE}
+STR_STATISTICS_NUM_TOWNS        :{BLACK}Número de cidades contribuídas{ORANGE}
+STR_STATISTICS_NOT_GROWING      :{BLACK}Número de cidades sem crescimento{ORANGE}
+
+##### TOWNBOX #####
+STR_TOWNBOX_CONTRIBUTOR         :Maior população {SILVER}{NUM}{BLACK}{} * {SILVER}{COMPANY}{BLACK}
+STR_TOWNBOX_NO_CONTRIBUTOR      :Maior população {SILVER}{NUM}{BLACK}{STRING}
+
+STR_TOWNBOX_CATEGORY            :Informação de carga : disponível / necessário{STRING}
+STR_TOWNBOX_CATEGORY_STOP       :Não se transporta o suficiente da cidade :{} * {RED}{CARGO_LIST}{BLACK}{}Informação de carga : disponível / necessário
+STR_TOWNBOX_CATEGORY_LOW        :Infraestrutura de transporte insuficiente :{} * {SILVER}{CARGO_LIST}{BLACK}{}Informação de carga : disponível / necessário
+STR_TOWNBOX_CATEGORY_DELAYED    :Não se transporta o suficiente da cidade :{} * {GOLD}{CARGO_LIST}{BLACK}{}Informação de carga : disponível / necessário
+STR_TOWNBOX_CARGO               :Categorias de carga :{STRING}
+STR_TOWNBOX_CARGO_STOP          :Não se transporta o suficiente da cidade :{} * {RED}{CARGO_LIST}{BLACK}{}Categorias de carga :
+STR_TOWNBOX_CARGO_LOW           :Infraestrutura de transporte insuficiente :{} * {SILVER}{CARGO_LIST}{BLACK}{}Categorias de carga :
+STR_TOWNBOX_CARGO_DELAYED       :Não se transporta o suficiente da cidade :{} * {GOLD}{CARGO_LIST}{BLACK}{}Categorias de carga :
+STR_TOWNBOX_NOGROWTH            :Transporte {SILVER}{CARGO_LIST}{BLACK} desta cidade para fazê-la crescer.
+
+
+##### ECONOMIES #####
+STR_ECONOMY_NONE                :
+STR_ECONOMY_BASESET_TEMPERATE   :Base Temperado
+STR_ECONOMY_BASESET_ARCTIC      :Base Ártico
+STR_ECONOMY_BASESET_TROPICAL    :Base Tropical
+STR_ECONOMY_BASESET_TOYLAND     :Base Fantasia
+STR_ECONOMY_FIRS1_FIRS          :FIRS 1 FIRS
+STR_ECONOMY_FIRS1_TEMPERATE     :FIRS 1 Temperado
+STR_ECONOMY_FIRS1_ARCTIC        :FIRS 1 Ártico
+STR_ECONOMY_FIRS1_TROPIC        :FIRS 1 Tropical
+STR_ECONOMY_FIRS1_HOD           :FIRS 1 Coração das trevas
+STR_ECONOMY_ECS                 :ECS
+STR_ECONOMY_FIRS2_TEMPERATE     :FIRS 2 Temperado
+STR_ECONOMY_FIRS2_ARCTIC        :FIRS 2 Ártico
+STR_ECONOMY_FIRS2_TROPIC        :FIRS 2 Tropical
+STR_ECONOMY_FIRS2_IAHC          :FIRS 2 Num país quente
+STR_ECONOMY_FIRS2_HOD           :FIRS 2 Coração das trevas
+STR_ECONOMY_YETI                :YETI
+STR_ECONOMY_FIRS3_TEMPERATE     :FIRS 3 Temperado
+STR_ECONOMY_FIRS3_ARCTIC        :FIRS 3 Ártico
+STR_ECONOMY_FIRS3_TROPIC        :FIRS 3 Tropical
+STR_ECONOMY_FIRS3_STEELTOWN     :FIRS 3 Cidade do aço
+STR_ECONOMY_FIRS3_IAHC          :FIRS 3 Num país quente
+STR_ECONOMY_FIRS3_EXTREME       :FIRS 3 Extremo
+STR_ECONOMY_NAIS_NA             :NAIS América do Norte
+STR_ECONOMY_ITI                 :Improved Town Industries
+STR_ECONOMY_FIRS4_TEMPERATE     :FIRS 4 Temperado
+STR_ECONOMY_FIRS4_ARCTIC        :FIRS 4 Ártico
+STR_ECONOMY_FIRS4_TROPIC        :FIRS 4 Tropical
+STR_ECONOMY_FIRS4_STEELTOWN     :FIRS 4 Cidade do aço
+STR_ECONOMY_FIRS4_IAHC          :FIRS 4 Num país quente
+STR_ECONOMY_FIRS5_TEMPERATE     :FIRS 5 Temperado
+STR_ECONOMY_FIRS5_ARCTIC        :FIRS 5 Ártico
+STR_ECONOMY_FIRS5_TROPIC        :FIRS 5 Tropical
+STR_ECONOMY_FIRS5_STEELTOWN     :FIRS 5 Cidade do aço
+STR_ECONOMY_FIRS5_IAHC          :FIRS 5 Num país quente
+STR_ECONOMY_XIS_LOT             :XIS The Lot
+STR_ECONOMY_AXIS_STEELTOWN      :AXIS Cidade do aço
+STR_ECONOMY_AXIS_TROPICAL       :AXIS Paraíso tropical
+STR_ECONOMY_OTIS                :OTIS
+STR_ECONOMY_IOTC                :Indústrias das Caraíbas
+STR_ECONOMY_LUMBERJACK          :Lumberjack Industries
+STR_ECOMONY_WRBI                :Wannaroo Basic Industries
+STR_ECONOMY_ITI2                :Improved Town Industries
+STR_ECONOMY_REAL                :Real Industries
+STR_ECONOMY_MINIMALIST          :Minimalist Industries
+STR_ECONOMY_PIRS                :Pikka's Industries Redux Set (PIRS 2022)
+
+##### ETERNAL LOVE #####
+STR_ETERNAL_LOVE_OUTSTANDING    :excecional
+STR_ETERNAL_LOVE_GOOD           :boa
+STR_ETERNAL_LOVE_POOR           :fraca
+
+##### UTILITY #####
+STR_COMMA                       :{SILVER}{COMMA}{ORANGE}
+STR_NUM                         :{SILVER}{NUM}{ORANGE}
+
+STR_DARK_BLUE                   :{DKBLUE}
+STR_PALE_GREEN                  :{LTBROWN}
+STR_PINK                        :{GOLD}
+STR_YELLOW                      :{YELLOW}
+STR_RED                         :{RED}
+STR_LIGHT_BLUE                  :{LTBLUE}
+STR_GREEN                       :{GREEN}
+STR_DARK_GREEN                  :{DKGREEN}
+STR_BLUE                        :{BLUE}
+STR_CREAM                       :{CREAM}
+STR_MAUVE                       :{BLACK}
+STR_PURPLE                      :{PURPLE}
+STR_ORANGE                      :{ORANGE}
+STR_BROWN                       :{BROWN}
+STR_GREY                        :{GRAY}
+STR_WHITE                       :{WHITE}
+STR_SILVER                      :{SILVER}
+
+STR_EMPTY                       :
+STR_STRING                      :{STRING}
