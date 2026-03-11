@@ -831,6 +831,27 @@ function ConstructECSVectorCargoList(cargo_list) {
         perm = [60,25,25,15,10],
         decay = [0.4,0.2,0.2,0.1,0.1]
     },
+    [Economies.FIRS5__STEELTOWN] = { // FIRS 5.2 - Steeltown
+        limiter = [28,24],
+        cat = [[28,24],//public services
+               [1,9,6,21,22,25,26,30,37,38,39,42,60],//local production - 1
+               [2,8,13,14,16,27,36,61],//imported goods - 1
+               [3,5,55,59],//manufactoring components - 3
+               [45,56]],//finished goods and vehicles - 4
+        list = [CatLabels.PUBLIC_SERVICES,CatLabels.LOCAL_PRODUCTION,CatLabels.IMPORTED_GOODS,
+                CatLabels.MANUFACTORING_COMPS,CatLabels.FINAL_AND_VEHICLES],
+        pop = [0,500,1000,4000,8000],
+        perm = [60,25,25,15,10],
+        decay = [0.4,0.2,0.2,0.1,0.1],
+        cat_6 = {
+            items = [0,3,4,7,10,11,12,15,17,18,19,20,23,29,31,32,33,34,35,40,41,43,44,46,47,48,49,50,51,52,53,54,57,58],//refined components - 2
+            insert_idx = 3,
+            label = CatLabels.REFINED_MATS,
+            pop_active = [0, 500, 1000, 4000, 8000, 12000],
+            perm_active = [60, 20, 20, 15, 15, 10],
+            decay_active = [0.4, 0.2, 0.2, 0.15, 0.15, 0.1]
+        }
+    },
     [Economies.XIS__THE_LOT] = { // XIS 0.6: The Lot
         limiter = [0,2],
         cat = [[0,2],
@@ -1021,6 +1042,11 @@ function DefineDynamicCargos(economy)
 
     // Helper to add a category easily
     local AddCat = function(ids, label, pop, perm, dec) {
+		
+		for (local i = 0; i < ids.len(); i++) {
+			Log.Info("Cargo Id: " + ids[i] + " Label: "+ label, Log.LVL_INFO);
+		
+		}
         ::CargoCat.append(ids);
         ::CargoCatList.append(label);
         ::CargoMinPopDemand.append(pop);
@@ -1109,9 +1135,8 @@ function DefineDynamicCargos(economy)
 
 function DefineCargosBySettings(economy)
 {
-    //If FIRS 5 is sued, I want to introduce Dynamic Mapping instead of Hardcoded IDs
-    if (economy == Economies.FIRS5__STEELTOWN || 
-        economy == Economies.FIRS5__TEMPERATE_BASIC || 
+    //If FIRS 5 is used, I want to introduce Dynamic Mapping instead of Hardcoded IDs
+    if (economy == Economies.FIRS5__TEMPERATE_BASIC || 
         economy == Economies.FIRS5__ARCTIC_BASIC || 
         economy == Economies.FIRS5__TROPIC_BASIC || 
         economy == Economies.FIRS5__IN_A_HOT_COUNTRY) 
