@@ -1,4 +1,16 @@
                 ******************************
+                *    Municipal Concessions   *
+                *  A GameScript for OpenTTD  *
+                ******************************
+
+Version: 0.1
+
+I havn't had time to write a readme. But the general idea, is to limit
+the abuse and focus on cities even further. Now you have to 'earn' the
+right to build near a city, by first growing other cities using RVG's
+fun system.
+
+                ******************************
                 *   Renewed Village Growth   *
                 *  A GameScript for OpenTTD  *
                 ******************************
