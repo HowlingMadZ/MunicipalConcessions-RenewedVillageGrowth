@@ -1,6 +1,8 @@
 /*
- * This file is part of Renewed Village Growth, a GameScript for OpenTTD.
- * Credits keoz (Renewed City Growth), Sylf (City Growth Limiter)
+ * This file is a part of the Municipal Concessions, a GameScript for OpenTTD.
+ * By Crusoe
+ *
+ * Credits Firrel (Renewed Village Growth), keoz (Renewed City Growth), Sylf (City Growth Limiter)
  *
  * It's free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the
@@ -13,24 +15,79 @@ require("version.nut");
 
 class MainClass extends GSInfo
     {
-    function GetAuthor()                { return "Anjin"; }
-    function GetName()                  { return "Renewed Village Growth FIRS5.2.0 fix"; }
-    function GetShortName()             { return "RVG5"; } //changed from REVI
-    function GetDescription()           { return "Fixfor RVG and FIRS5.x compatibility, based on the work done by ChronosXYZ and the original RVG"; }
+    function GetAuthor()                { return "Crusoe"; }
+    function GetName()                  { return "Municipal Concessions 0.1"; }
+    function GetShortName()             { return "MCS1"; } //changed from REVI
+    function GetDescription()           { return "Force growing a city before expanding to more. Based on Renewed Village Growth"; }
     function GetURL()                   { return "https://www.tt-forums.net/viewtopic.php?f=65&t=87052"; }
     function GetVersion()               { return SELF_VERSION; }
     function GetDate()                  { return SELF_DATE; }
-    function GetAPIVersion()            { return "14"; }
+    function GetAPIVersion()            { return "15"; }
     function MinVersionToLoad()         { return SELF_MINLOADVERSION; }
     function CreateInstance()           { return "MainClass"; }
     function GetSettings() {
 
+        // Municipal Station Concessions settings
+        AddSetting({
+            name = "town_slot_enabled",
+            description = "Concessions: Enable municipal station concession system",
+            easy_value = 1,
+            medium_value = 1,
+            hard_value = 1,
+            custom_value = 1,
+            flags = CONFIG_BOOLEAN });
+
+        AddSetting({
+            name = "initial_town_slots",
+            description = "Concessions: Starting concessions per company",
+            easy_value = 4,
+            medium_value = 2,
+            hard_value = 1,
+            custom_value = 2,
+            flags = 0, min_value = 0, max_value = 50, step_size = 1 });
+
+        AddSetting({
+            name = "points_per_unlock",
+            description = "Concessions: Growth points needed to earn more concessions",
+            easy_value = 5000,
+            medium_value = 10000,
+            hard_value = 20000,
+            custom_value = 10000,
+            flags = 0, min_value = 1000, max_value = 100000, step_size = 1000 });
+
+        AddSetting({
+            name = "slots_per_unlock",
+            description = "Concessions: Number of concessions granted per unlock",
+            easy_value = 3,
+            medium_value = 2,
+            hard_value = 1,
+            custom_value = 2,
+            flags = 0, min_value = 1, max_value = 10, step_size = 1 });
+
+        AddSetting({
+            name = "unauthorized_station_delay",
+            description = "Concessions: Minutes before unauthorized station is demolished (0 = instant)",
+            easy_value = 5,
+            medium_value = 3,
+            hard_value = 0,
+            custom_value = 3,
+            flags = 0, min_value = 0, max_value = 10, step_size = 1 });
+
+        AddSetting({
+            name = "town_zone_radius",
+            description = "Concessions: Town's municipal zone (2x for conceded towns)",
+            easy_value = 30,
+            medium_value = 25,
+            hard_value = 20,
+            custom_value = 25,
+            flags = 0, min_value = 18, max_value = 100, step_size = 5 });
+
         AddSetting({ name = "town_info_mode",
                 description = "Town info display mode",
-                easy_value = 1,
-                medium_value = 1,
-                hard_value = 1,
-                custom_value = 1,
+                easy_value = 4,
+                medium_value = 4,
+                hard_value = 4,
+                custom_value = 4,
                 flags = CONFIG_INGAME, min_value = 1, max_value = 5 });
         AddLabels("town_info_mode", {
                     _1 = "Automatic",
@@ -57,8 +114,8 @@ class MainClass extends GSInfo
 
         AddSetting({ name = "eternal_love",
                 description = "Eternal love from towns",
-                easy_value = 1,
-                medium_value = 3,
+                easy_value = 0,
+                medium_value = 0,
                 hard_value = 0,
                 custom_value = 0,
                 flags = CONFIG_INGAME, min_value = 0, max_value = 3 });
@@ -78,10 +135,10 @@ class MainClass extends GSInfo
 
         AddSetting({ name = "cargo_randomization",
                 description = "Randomization: Type",
-                easy_value = 1,
-                medium_value = 7,
-                hard_value = 10,
-                custom_value = 10,
+                easy_value = 5,
+                medium_value = 5,
+                hard_value = 5,
+                custom_value = 5,
                 flags = CONFIG_INGAME, min_value = 1, max_value = 15 });
         AddLabels("cargo_randomization", {
                     _1 = "None",
@@ -227,15 +284,15 @@ class MainClass extends GSInfo
             flags = CONFIG_INGAME, min_value = -1, max_value = 100000, step_size = 100});
 
         AddSetting({ name = "town_growth_factor",
-                description = "Expert: town growth factor",
-                easy_value = 50,
-                medium_value = 100,
-                hard_value = 200,
-                custom_value = 100,
+                description = "Expert: Town growth factor",
+                easy_value = 20,
+                medium_value = 40,
+                hard_value = 60,
+                custom_value = 20,
                 flags = CONFIG_INGAME, min_value = 20, max_value = 50000, step_size = 20 });
 
         AddSetting({ name = "supply_impacting_part",
-                description = "Expert: minimum fulfilled percentage for TGR growth",
+                description = "Expert: Minimum fulfilled percentage for TGR growth",
                 easy_value = 30,
                 medium_value = 50,
                 hard_value = 70,
@@ -251,15 +308,15 @@ class MainClass extends GSInfo
                 flags = CONFIG_INGAME, min_value = 1, max_value = 5 });
 
         AddSetting({ name = "lowest_town_growth_rate",
-                description = "Expert: slowest TGR if requirements are not met",
-                easy_value = 365,
-                medium_value = 550,
+                description = "Expert: Slowest TGR if requirements are not met",
+                easy_value = 880,
+                medium_value = 880,
                 hard_value = 880,
-                custom_value = 550,
+                custom_value = 880,
                 flags = CONFIG_INGAME, min_value = 0, max_value = 880, step_size = 10 });
 
         AddSetting({ name = "allow_0_days_growth",
-                description = "Expert: allow 0 days growth",
+                description = "Expert: Allow 0 days growth",
                 easy_value = 0,
                 medium_value = 0,
                 hard_value = 0,
