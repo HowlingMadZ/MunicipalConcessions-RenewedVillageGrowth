@@ -456,6 +456,11 @@ function MainClass::ManageTowns()
         this.story_editor.CheckParameters(this.companies);
         DailyManageTownPopulation();
 
+        // Monitor station builds for town slot system
+        foreach (company in this.companies) {
+            company.MonitorStations(this.towns, this.companies);
+        }
+
         this.current_date = date;
     }
 
@@ -498,6 +503,7 @@ function MainClass::ManageTowns()
 
         foreach (company in this.companies) {
             company.MonthlyUpdateGUIGoals(this.towns);
+            company.MonthlyScanStations(this.companies);
         }
 
         this.current_month = month;
@@ -516,6 +522,11 @@ function MainClass::ManageTowns()
 
         ProspectRawIndustry();
         CreateSubsidies(towns, companies);
+
+        // Yearly station scan for far stations
+        foreach (company in this.companies) {
+            company.YearlyScanStations();
+        }
 
         this.current_year = year;
     }
