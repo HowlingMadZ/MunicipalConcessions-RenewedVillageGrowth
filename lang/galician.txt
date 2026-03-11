@@ -1,3 +1,12 @@
+
+##### MUNICIPAL STATION CONCESSIONS #####
+STR_STATISTICS_TOWN_SLOTS		:{BLACK}Concesións municipais ({NUM} dispoñibles)
+STR_TOWN_SLOT_UNLOCKED		:{BLACK}A túa compañía obtivo {NUM} nova(s) concesión(s) municipal(is)! Agora podes operar en ata {NUM} vilas.
+STR_TOWN_SLOT_UNAUTHORIZED		:{BLACK}Sen concesión para {TOWN}! Esta estación será demolida en {NUM} minuto(s). Non hai concesións dispoñibles.
+STR_TOWN_SLOT_CLAIMED		:{BLACK}{COMPANY} obtivo unha concesión municipal en {TOWN}!
+STR_TOWN_SLOT_UNAUTHORIZED_INSTANT		:{BLACK}Sen concesión para {TOWN}! Esta estación foi demolida. Non hai concesións dispoñibles.
+STR_TOWN_SLOT_RELEASED		:{BLACK}A túa concesión municipal en {TOWN} expirou — non quedan estacións na zona.
+
 ##### TOWN SIGN #####
 STR_TOWNSIGN_GROWTHRATE     :Medrando : {NUM} {STRING}
 STR_TOWNSIGN_MONTHS         :meses

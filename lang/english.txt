@@ -1,3 +1,11 @@
+##### MUNICIPAL STATION CONCESSIONS #####
+STR_STATISTICS_TOWN_SLOTS               :{BLACK}Municipal Concessions ({NUM} available)
+STR_TOWN_SLOT_UNLOCKED                  :{BLACK}Your company has been granted {NUM} new municipal concession(s)! You may now operate in up to {NUM} towns.
+STR_TOWN_SLOT_UNAUTHORIZED              :{BLACK}No concession for {TOWN}! This station will be demolished in {NUM} minute(s). No concessions available.
+STR_TOWN_SLOT_CLAIMED                   :{BLACK}{COMPANY} has been granted a municipal concession in {TOWN}!
+STR_TOWN_SLOT_UNAUTHORIZED_INSTANT      :{BLACK}No concession for {TOWN}! This station has been demolished. No concessions available.
+STR_TOWN_SLOT_RELEASED                  :{BLACK}Your municipal concession in {TOWN} has expired — no stations remain in the area.
+
 ##### TOWN SIGN #####
 STR_TOWNSIGN_GROWTHRATE  :Growth : {NUM} {STRING}
 STR_TOWNSIGN_MONTHS      :months
@@ -19,7 +27,7 @@ STR_CARGOCAT_LABEL_8     :Category I
 STR_CARGOCAT_LABEL_9     :Category II
 STR_CARGOCAT_LABEL_10    :Category III
 STR_CARGOCAT_LABEL_11    :Category IV
-STR_CARGOCAT_LABEL_12    :Category V
+STR_CARGOCAT_LABEL_12    :Advanced materials
 STR_CARGOCAT_LABEL_13    :Raw materials & food
 STR_CARGOCAT_LABEL_14    :Refined materials
 STR_CARGOCAT_LABEL_15    :Manufacturing components

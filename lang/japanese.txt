@@ -1,3 +1,12 @@
+
+##### MUNICIPAL STATION CONCESSIONS #####
+STR_STATISTICS_TOWN_SLOTS		:{BLACK}都市営業許可 (残り{NUM}枠)
+STR_TOWN_SLOT_UNLOCKED		:{BLACK}新たに{NUM}件の都市営業許可を取得しました！最大{NUM}都市で営業可能です。
+STR_TOWN_SLOT_UNAUTHORIZED		:{BLACK}{TOWN}の営業許可がありません！この駅は{NUM}分後に撤去されます。許可枠なし。
+STR_TOWN_SLOT_CLAIMED		:{BLACK}{COMPANY}が{TOWN}の都市営業許可を取得しました！
+STR_TOWN_SLOT_UNAUTHORIZED_INSTANT		:{BLACK}{TOWN}の営業許可がありません！この駅は撤去されました。許可枠なし。
+STR_TOWN_SLOT_RELEASED		:{BLACK}{TOWN}の都市営業許可が失効しました — 周辺に駅がありません。
+
 ##### TOWN SIGN #####
 STR_TOWNSIGN_GROWTHRATE     :成長：毎{NUM}{STRING}
 STR_TOWNSIGN_MONTHS         :月

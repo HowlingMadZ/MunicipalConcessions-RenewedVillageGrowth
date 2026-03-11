@@ -1,4 +1,13 @@
 
+##### MUNICIPAL STATION CONCESSIONS #####
+STR_STATISTICS_TOWN_SLOTS		:{BLACK}Concessions municipales ({NUM} disponibles)
+STR_TOWN_SLOT_UNLOCKED		:{BLACK}Votre société a obtenu {NUM} nouvelle(s) concession(s) municipale(s) ! Vous pouvez désormais opérer dans {NUM} villes.
+STR_TOWN_SLOT_UNAUTHORIZED		:{BLACK}Pas de concession pour {TOWN} ! Cette station sera démolie dans {NUM} minute(s). Aucune concession disponible.
+STR_TOWN_SLOT_CLAIMED		:{BLACK}{COMPANY} a obtenu une concession municipale à {TOWN} !
+STR_TOWN_SLOT_UNAUTHORIZED_INSTANT		:{BLACK}Pas de concession pour {TOWN} ! Cette station a été démolie. Aucune concession disponible.
+STR_TOWN_SLOT_RELEASED		:{BLACK}Votre concession municipale à {TOWN} a expiré — plus aucune station dans la zone.
+
+
 ##### TOWN SIGN #####
 STR_TOWNSIGN_GROWTHRATE     :Croissance: {NUM} {STRING}
 STR_TOWNSIGN_MONTHS         :mois

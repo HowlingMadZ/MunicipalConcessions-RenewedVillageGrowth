@@ -1,3 +1,12 @@
+
+##### MUNICIPAL STATION CONCESSIONS #####
+STR_STATISTICS_TOWN_SLOTS		:{BLACK}市政特許經營權（剩餘{NUM}個）
+STR_TOWN_SLOT_UNLOCKED		:{BLACK}您的公司獲得了{NUM}個新的市政特許經營權！現在可以在{NUM}個城鎮營運。
+STR_TOWN_SLOT_UNAUTHORIZED		:{BLACK}沒有{TOWN}的特許經營權！該車站將在{NUM}分鐘後拆除。無可用特許權。
+STR_TOWN_SLOT_CLAIMED		:{BLACK}{COMPANY}獲得了{TOWN}的市政特許經營權！
+STR_TOWN_SLOT_UNAUTHORIZED_INSTANT		:{BLACK}沒有{TOWN}的特許經營權！該車站已被拆除。無可用特許權。
+STR_TOWN_SLOT_RELEASED		:{BLACK}您在{TOWN}的市政特許經營權已過期——該區域內沒有車站。
+
 ##### TOWN SIGN #####
 STR_TOWNSIGN_GROWTHRATE     :每 {NUM} {STRING}成長一次
 STR_TOWNSIGN_MONTHS         :個月

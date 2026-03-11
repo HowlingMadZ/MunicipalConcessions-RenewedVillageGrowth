@@ -1,3 +1,12 @@
+
+##### MUNICIPAL STATION CONCESSIONS #####
+STR_STATISTICS_TOWN_SLOTS		:{BLACK}Городские концессии ({NUM} доступно)
+STR_TOWN_SLOT_UNLOCKED		:{BLACK}Ваша компания получила {NUM} новых городских концессий! Теперь вы можете работать в {NUM} городах.
+STR_TOWN_SLOT_UNAUTHORIZED		:{BLACK}Нет концессии на {TOWN}! Эта станция будет снесена через {NUM} минут. Концессий нет.
+STR_TOWN_SLOT_CLAIMED		:{BLACK}{COMPANY} получил городскую концессию в {TOWN}!
+STR_TOWN_SLOT_UNAUTHORIZED_INSTANT		:{BLACK}Нет концессии на {TOWN}! Эта станция была снесена. Концессий нет.
+STR_TOWN_SLOT_RELEASED		:{BLACK}Ваша городская концессия в {TOWN} истекла — станций в районе не осталось.
+
 ##### TOWN SIGN #####
 STR_TOWNSIGN_GROWTHRATE     :Город растёт раз в {NUM} {STRING}
 STR_TOWNSIGN_MONTHS         :месяцев

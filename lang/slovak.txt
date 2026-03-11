@@ -1,3 +1,12 @@
+
+##### MUNICIPAL STATION CONCESSIONS #####
+STR_STATISTICS_TOWN_SLOTS		:{BLACK}Mestské koncesie ({NUM} k dispozícii)
+STR_TOWN_SLOT_UNLOCKED		:{BLACK}Vaša spoločnosť získala {NUM} nových mestských koncesií! Teraz môžete operovať v {NUM} mestách.
+STR_TOWN_SLOT_UNAUTHORIZED		:{BLACK}Žiadna koncesia pre {TOWN}! Táto stanica bude zbúraná za {NUM} minút. Žiadne koncesie nie sú k dispozícii.
+STR_TOWN_SLOT_CLAIMED		:{BLACK}{COMPANY} získal mestskú koncesiu v {TOWN}!
+STR_TOWN_SLOT_UNAUTHORIZED_INSTANT		:{BLACK}Žiadna koncesia pre {TOWN}! Táto stanica bola zbúraná. Žiadne koncesie nie sú k dispozícii.
+STR_TOWN_SLOT_RELEASED		:{BLACK}Vaša mestská koncesia v {TOWN} vypršala — v oblasti nezostali žiadne stanice.
+
 ##### TOWN SIGN #####
 STR_TOWNSIGN_GROWTHRATE     :Rast mesta : {NUM} {STRING}
 STR_TOWNSIGN_MONTHS         :mesiacov
