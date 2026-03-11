@@ -2,7 +2,7 @@
  * This file is a part of the Municipal Concessions, a GameScript for OpenTTD.
  * By Crusoe
  *
- * Credits Firrel (Renewed Village Growth), keoz (Renewed City Growth), Sylf (City Growth Limiter)
+ * Credits F1rrel (Renewed Village Growth), keoz (Renewed City Growth), Sylf (City Growth Limiter)
  *
  * It's free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the

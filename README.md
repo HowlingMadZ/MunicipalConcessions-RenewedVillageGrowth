@@ -3,7 +3,7 @@
 
 ![Renewed Village Growth](https://i.imgur.com/37J9Kn4.png)
 
-MC is a fork of [Renewed Village Growth (RVG)](https://www.tt-forums.net/viewtopic.php?f=65&t=87052) by Firrel — a Game Script for OpenTTD that manages town growth through varied cargo delivery and sustained passenger/mail transportation. This fork builds on community maintenance patches by AlexMD83 and ChronosXYZ, with additional changes and features introduced under the Municipal Concessions name.
+MC is a fork of [Renewed Village Growth (RVG)](https://www.tt-forums.net/viewtopic.php?f=65&t=87052) by F1rrel — a Game Script for OpenTTD that manages town growth through varied cargo delivery and sustained passenger/mail transportation. This fork builds on community maintenance patches by AlexMD83 and ChronosXYZ, with additional changes and features introduced under the Municipal Concessions name.
 
 The script supports all NewGRF industry replacement sets. RVG itself was born as a combination of [keoz's Renewed City Growth GS](https://www.tt-forums.net/viewtopic.php?f=65&t=69827) and [Sylf's City Growth Limiter GS](https://www.tt-forums.net/viewtopic.php?t=58238).
 
@@ -16,7 +16,7 @@ BaNaNaS: none yet
 |---|---|---|
 | Renewed City Growth GS | keoz | Original inspiration |
 | City Growth Limiter GS | Sylf | Original inspiration |
-| Renewed Village Growth (RVG) | Firrel | Combined the above; original mod |
+| Renewed Village Growth (RVG) | F1rrel | Combined the above; original mod |
 | RVG (community patches) | AlexMD83, ChronosXYZ | Maintained after Firrel's silence |
 | **Municipal Concessions (MC)** | **Crusoe** | This fork; extended and renamed |
 
@@ -53,7 +53,7 @@ If you want to contribute to a translation, you can do it by modifying a file [e
 
 ## License
 
-Municipal Concessions is free software, distributed under the same terms as Renewed Village Growth: the GNU General Public License v2 (see license.txt). Municipal Concessions is a derivative work of RVG by Firrel.
+Municipal Concessions is free software, distributed under the same terms as Renewed Village Growth: the GNU General Public License v2 (see license.txt). Municipal Concessions is a derivative work of RVG by F1rrel.
 
 ## Credits
 
@@ -61,7 +61,7 @@ Municipal Concessions is free software, distributed under the same terms as Rene
 
 **Community patch base** by: AlexMD83, ChronosXYZ
 
-**Renewed Village Growth** by: Firrel
+**Renewed Village Growth** by: F1rrel
 
 Thanks to:
 - keoz for the Renewed City Growth GS
