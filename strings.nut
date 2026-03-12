@@ -211,7 +211,15 @@ function GoalTown::TownSignText()
 function DebugCargoLabels()
 {
     foreach (index, cargo_label in ::CargoIDList) {
-        Log.Info("Cargo " + index + ": " + cargo_label, Log.LVL_SUB_DECISIONS);
+        local indStr = ""+index;
+        if(index < 10)
+            indStr = "0"+index;
+		local cargoValidity = "Cargo";
+        if(!GSCargo.IsValidCargo(index))
+        {
+			cargoValidity = "NOT Cargo";
+        }
+        Log.Info(cargoValidity + " " + index + ":   " + cargo_label+"   "+ GSCargo.GetName(index), Log.LVL_SUB_DECISIONS);
     }
 }
 

@@ -187,7 +187,7 @@ function StoryEditor::CreateStoryBook(companies, num_towns, init_error)
 
         foreach (company in companies) {
             // Create welcome page
-            company.sp_welcome = this.NewStoryPage(company.id, GSText(GSText.STR_SB_WELCOME_TITLE, SELF_MAJORVERSION, SELF_MINORVERSION));
+            company.sp_welcome = this.NewStoryPage(company.id, GSText(GSText.STR_SB_WELCOME_TITLE, 12, 1));
             this.WelcomePage(company.sp_welcome);
             GSStoryPage.Show(company.sp_welcome);
         }
@@ -223,7 +223,7 @@ function StoryEditor::CreateStoryBook(companies, num_towns, init_error)
 function StoryEditor::CreateNewCompanyStoryBook(company)
 {
     // Create welcome page
-    company.sp_welcome = this.NewStoryPage(company.id, GSText(GSText.STR_SB_WELCOME_TITLE, SELF_MAJORVERSION, SELF_MINORVERSION));
+    company.sp_welcome = this.NewStoryPage(company.id, GSText(GSText.STR_SB_WELCOME_TITLE, 12, 1));
     this.WelcomePage(company.sp_welcome);
     GSStoryPage.Show(company.sp_welcome);
 }
