@@ -67,6 +67,7 @@ enum Economies
     REAL, // Real Industries Beta
     MINIMALIST, // 1.1
     PIRS, // PIRS 2022
+	GIST, // GIST 0.19.1 - 2025
     END,
 }
 
@@ -318,6 +319,13 @@ function GetEconomyCargoList(economy, cargo_list) {
     case(Economies.PIRS): // PIRS 2022
         return ["PASS","COAL","MAIL","OIL_","FISH","GOOD","GRAI","WOOD","IORE","STEL","WDPR",
                 "FOOD","FRUT","ENSP","FMSP","RFPR","PETR"];
+	case(Economies.GIST): // GIST 0.19.1 - 2025
+    return ["PASS","COAL","MAIL","OIL_","LVST","GOOD","GRAI","WOOD","IORE","STEL",
+            "FISH","FOOD","PLAS","WDPR","VEHI","LIME","SAND","CMNT","BDMT","WOOL",
+            "TEXT","ALUM","AORE","SALT","CHLO","LYE_","H2__","CORE","COPR","CBLK",
+            "COAT","MILK","MNSP","QLME","GLAS","PAPR","RFPR","C2H4","PETR","COKE",
+            "PORE","SULP","ACID","O2__","N2__","NH3_","SASH","FRUT","BIOM","ENSP",
+            "STSH","STWR","SCMT","RCYC","RUBR","ZINC","TYRE","VENG","VBOD","VPTS"];
     default:
         return [];
     }
@@ -831,6 +839,45 @@ function ConstructECSVectorCargoList(cargo_list) {
         perm = [60,25,25,15,10],
         decay = [0.4,0.2,0.2,0.1,0.1]
     },
+    [Economies.FIRS5__TEMPERATE_BASIC] = { // FIRS 5 - Temperate Basic
+    limiter = [14,12],
+    cat = [[14,12],                    // Public Services: PASS, MAIL
+           [5,6,11,13],                // Raw Food: FISH,FRUT,LVST,MILK
+           [2,8,10,15],                // Raw Materials: COAL,IORE,KAOL,SAND
+           [0,1,16,17],                // Processed: BEER,CHEM,SCMT,STEL
+           [3,4,7,9]],                 // Final: ENSP,FMSP,GOOD,FOOD
+    list = [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_FOOD,CatLabels.RAW_MATERIALS,
+            CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS],
+    pop = [0,500,1000,4000,8000],
+    perm = [60,25,25,20,15],
+    decay = [0.4,0.2,0.2,0.1,0.1]
+    },
+    [Economies.FIRS5__ARCTIC_BASIC] = { // FIRS 5 - Arctic Basic
+    limiter = [11,9],
+    cat = [[11,9],              // Public Services: PASS, MAIL
+           [5,8,12,14],         // Raw Food/Nature: FISH,WOOD,PEAT,POTA
+           [7,13,15,18],        // Raw Industrial: KAOL,PHOS,PORE,ZINC
+           [0,2,4,16,17],       // Processed: NH3_,BOOM,FERT,SULP,WDPR
+           [1,3,6,10]],         // Final: ENSP,FMSP,FOOD,PAPR
+    list = [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_FOOD,CatLabels.RAW_MATERIALS,
+            CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS],
+    pop = [0,500,1000,4000,8000],
+    perm = [60,25,25,20,15],
+    decay = [0.4,0.2,0.2,0.1,0.1]
+    },
+    [Economies.FIRS5__TROPIC_BASIC] = { // FIRS 5 - Tropic Basic
+    limiter = [17,14],
+    cat = [[17,14],             // Public Services: PASS, MAIL
+           [1,8,10,12,13,18],   // Raw Food: BEAN,FISH,FRUT,GRAI,LVST,WOOL
+           [5,16],              // Raw Industrial: CORE,OIL_
+           [0,2,3,4,15],        // Processed: BEER,CHEM,JAVA,COPR,NITR
+           [6,7,9,11]],         // Final: ENSP,FMSP,FOOD,GOOD
+    list = [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_FOOD,CatLabels.RAW_MATERIALS,
+            CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS],
+    pop = [0,500,1000,4000,8000],
+    perm = [60,25,25,15,10],
+    decay = [0.4,0.2,0.2,0.1,0.1]
+    },
     [Economies.FIRS5__STEELTOWN] = { // FIRS 5.2 - Steeltown
         limiter = [28,24],
         cat = [[28,24],//public services
@@ -851,6 +898,19 @@ function ConstructECSVectorCargoList(cargo_list) {
             perm_active = [60, 20, 20, 15, 15, 10],
             decay_active = [0.4, 0.2, 0.2, 0.15, 0.15, 0.1]
         }
+    },
+	[Economies.FIRS5__IN_A_HOT_COUNTRY] = { // FIRS 5 - In A Hot Country
+    limiter = [23,18],
+    cat = [[23,18],                              // Public Services: PASS, MAIL
+           [3,5,8,9,14,16,17,19,20,21,22,25,26,27], // Raw/Food: CASS,CLAY,CORE,DIAM,FRUT,LVST,WOOD,MAIZ,MNO2,NUTS,OIL_,PHOS,RUBR,SAND
+           [0,1,7,10,24,28],                     // Processed: GRVL,BEER,COPR,EOIL,PETR,WDPR
+           [2,4,13],                             // Manufactured: BDMT,CHEM,FOOD
+           [11,12,15]],                          // Final: ENSP,FMSP,GOOD
+    list = [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_FOOD,CatLabels.RAW_MATERIALS,
+            CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS],
+    pop = [0,500,1000,4000,8000],
+    perm = [60,25,25,15,10],
+    decay = [0.4,0.2,0.2,0.1,0.1]
     },
     [Economies.XIS__THE_LOT] = { // XIS 0.6: The Lot
         limiter = [0,2],
@@ -1005,7 +1065,28 @@ function ConstructECSVectorCargoList(cargo_list) {
         pop = [0,500,1500,4000],
         perm = [60,35,25,15],
         decay = [0.4,0.3,0.2,0.1]
+    },
+	[Economies.GIST] = { // GIST 0.19.1 - 2025
+    limiter = [0,2],
+    cat = [[0,2],                                          // Public Services: PASS, MAIL
+           [1,3,4,6,7,8,10,19,22,27,31,40,47,48],         // Raw/Food: COAL,OIL_,LVST,GRAI,WOOD,IORE,FISH,WOOL,AORE,CORE,MILK,PORE,FRUT,BIOM
+           [9,13,15,16,23,25,26,28,33,35,36,38,39,41,46,52,54,55], // Processed: STEL,WDPR,LIME,SAND,SALT,LYE_,H2__,COPR,QLME,PAPR,RFPR,PETR,COKE,SULP,SASH,SCMT,RUBR,ZINC
+           [17,18,20,21,24,29,30,32,34,37,43,44,45,50,51,53], // Manufactured: CMNT,BDMT,TEXT,ALUM,CHLO,CBLK,COAT,MNSP,GLAS,C2H4,O2__,N2__,NH3_,STSH,STWR,RCYC
+           [5,11,12,49]],                                  // Final/Vehicles: GOOD,FOOD,PLAS,ENSP
+    list = [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_AND_FOOD,CatLabels.REFINED_MATS,
+            CatLabels.MANUFACTORING_COMPS,CatLabels.FINAL_AND_VEHICLES],
+    pop = [0,500,1000,4000,8000],
+    perm = [60,25,25,15,10],
+    decay = [0.4,0.2,0.2,0.1,0.1],
+    cat_6 = {
+        items = [14,56,57,58,59],                          // Vehicles: VEHI,TYRE,VENG,VBOD,VPTS
+        insert_idx = 5,
+        label = CatLabels.FINAL_AND_VEHICLES,
+        pop_active = [0,500,1000,4000,8000,12000],
+        perm_active = [60,20,20,15,15,10],
+        decay_active = [0.4,0.2,0.2,0.15,0.15,0.1]
     }
+	},
 };
 
 /* HELPER: Finds the real Cargo ID for a given String Label (e.g. "PASS") */
@@ -1044,7 +1125,7 @@ function DefineDynamicCargos(economy)
     local AddCat = function(ids, label, pop, perm, dec) {
 		
 		for (local i = 0; i < ids.len(); i++) {
-			Log.Info("Cargo Id: " + ids[i] + " Label: "+ label, Log.LVL_INFO);
+			Log.Info("#"+i+" Cargo Id: " + ids[i] + " Label: "+ label, Log.LVL_INFO);
 		
 		}
         ::CargoCat.append(ids);
@@ -1135,15 +1216,6 @@ function DefineDynamicCargos(economy)
 
 function DefineCargosBySettings(economy)
 {
-    //If FIRS 5 is used, I want to introduce Dynamic Mapping instead of Hardcoded IDs
-    if (economy == Economies.FIRS5__TEMPERATE_BASIC || 
-        economy == Economies.FIRS5__ARCTIC_BASIC || 
-        economy == Economies.FIRS5__TROPIC_BASIC || 
-        economy == Economies.FIRS5__IN_A_HOT_COUNTRY) 
-    {
-        return DefineDynamicCargos(economy);
-    }
-
     /* Setup global cargo variables for legacy economies */
     // Lookup settings
     if (!(economy in ::CargoSettings)) {
@@ -1151,6 +1223,10 @@ function DefineCargosBySettings(economy)
             return false;
     } else {
         local s = ::CargoSettings[economy];
+		
+        if (!_IsLimiterValid(s))
+            return DefineDynamicCargos(economy);
+        
         ::CargoLimiter <- s.limiter;
         ::CargoCat <- s.cat;
         ::CargoCatList <- s.list;
@@ -1176,26 +1252,100 @@ function DefineCargosBySettings(economy)
     }
 
     // Remove unused cargo ids
-    if (::CargoIDList) {
-        foreach (cat in ::CargoCat) {
-            for (local index = 0; index < cat.len(); ++index) {
-                if (cat[index] >= ::CargoIDList.len() || ::CargoIDList[cat[index]] == null) {
-                    cat.remove(index);
-                    --index;
-                }
-            }
-        }
+    _PruneUnusedCargoIds();
+    _SlotOrphanedCargos();
+    
+    return true;
+}
 
-        foreach (index, cargo in ::CargoLimiter) {
-            if (cargo >= ::CargoIDList.len() || ::CargoIDList[cargo] == null) {
-                ::CargoLimiter.remove(index);
+function _IsLimiterValid(s)
+{
+    if (s.limiter.len() < 2) return true;
+
+    local label_0 = (s.limiter[0] < ::CargoIDList.len()) ? ::CargoIDList[s.limiter[0]] : null;
+    local label_1 = (s.limiter[1] < ::CargoIDList.len()) ? ::CargoIDList[s.limiter[1]] : null;
+
+    if (label_0 != "PASS" || label_1 != "MAIL") {
+        Log.Info("_IsLimiterValid: Failed for economy (expected PASS/MAIL, got "
+                 + label_0 + "/" + label_1 + "). Will fall back to dynamic.", Log.LVL_INFO);
+        return false;
+    }
+
+    return true;
+}
+
+function _PruneUnusedCargoIds()
+{
+    if (!::CargoIDList) return;
+
+    foreach (cat in ::CargoCat) {
+        for (local index = 0; index < cat.len(); ++index) {
+            if (cat[index] >= ::CargoIDList.len() || ::CargoIDList[cat[index]] == null) {
+Log.Info("Cargo-remove unused cargo", Log.LVL_INFO);
+                cat.remove(index);
                 --index;
             }
         }
     }
 
-    return true;
+    foreach (index, cargo in ::CargoLimiter) {
+        if (cargo >= ::CargoIDList.len() || ::CargoIDList[cargo] == null) {
+Log.Info("Cargo-remove unused cargolimiter", Log.LVL_INFO);
+            ::CargoLimiter.remove(index);
+            --index;
+        }
+    }
 }
+
+function _SlotOrphanedCargos()
+{
+Log.Info("Cargo-slot orphaned cargos in", Log.LVL_INFO);
+    // Build a set of all cargo IDs already assigned to a category
+    local assigned = {};
+    foreach (cat in ::CargoCat) {
+        foreach (cargo in cat) {
+            assigned[cargo] <- true;
+        }
+    }
+
+    // Find live cargos that exist but weren't assigned anywhere
+    local orphans = [];
+    foreach (index, label in ::CargoIDList) {
+        if (label == null) continue;
+        if (label == "PASS" || label == "MAIL") continue;
+        if (!(index in assigned)) {
+            orphans.append(index);
+            Log.Info("_SlotOrphanedCargos: Unassigned cargo " + label 
+                     + " (ID " + index + ") will be slotted dynamically.", Log.LVL_INFO);
+        }
+    }
+
+    if (orphans.len() == 0) return;
+
+    // Slot each orphan into the category whose min pop demand
+    // best fits it, using raw/processed as a rough guide
+    foreach (cargo in orphans) {
+        local is_raw = IsRawCargo(cargo);
+        local best_cat = 1; // Default to second category (first non-public)
+
+        for (local i = 1; i < ::CargoCat.len(); i++) {
+            if (is_raw && ::CargoMinPopDemand[i] <= 1000) {
+                best_cat = i;
+                break;
+            } else if (!is_raw && ::CargoMinPopDemand[i] >= 1000) {
+                best_cat = i;
+                break;
+            }
+        }
+
+        Log.Info("_SlotOrphanedCargos: Slotting " + ::CargoIDList[cargo] 
+                 + " into category " + best_cat 
+                 + " (pop " + ::CargoMinPopDemand[best_cat] + ")", Log.LVL_INFO);
+        ::CargoCat[best_cat].append(cargo);
+    }
+}
+
+
 
 /* Compare the ingame initial cargo list to the
  * industry sets and cargoscheme supported by the script.
@@ -1231,7 +1381,23 @@ function DiscoverEconomyType()
     } else {
         Log.Info("Economy Detection: No match found. Falling back to GENERATED.", Log.LVL_INFO);
     }
+    _LogMissingCargos(GetEconomyCargoList(best_economy, actual_list), actual_list);
     return best_economy;
+}
+
+function _LogMissingCargos(expected_list, actual_list)
+{
+    local actual_set = {};
+    foreach (label in _NormalizeCargoLabelList(actual_list)) {
+        actual_set[label] <- true;
+    }
+
+    foreach (label in _NormalizeCargoLabelList(expected_list)) {
+        if (!(label in actual_set)) {
+            Log.Info("_LogMissingCargos: " + label 
+                     + " is in economy definition but not in live game.", Log.LVL_INFO);
+        }
+    }
 }
 
 /* Removes nulls and special internal labels so we can sort safely.
@@ -1259,6 +1425,7 @@ switch(e) {
         case Economies.FIRS5__TROPIC_BASIC: return "FIRS5 TROPIC";
         case Economies.FIRS4__TEMPERATE_BASIC: return "FIRS4 TEMPERATE";
         case Economies.MINIMALIST: return "MINIMALIST";
+		case Economies.GIST: return "GIST 0.19.1";
         
         default: return "NOT RECORDED(" + e + ")";
     }
@@ -1458,7 +1625,7 @@ function RandomizeFixed(number, near_cargos, near_cargo_probability)
         cargo_cat_text += "] ";
     }
 
-    Log.Info(GSTown.GetName(this.id) + ": " + cargo_cat_text, Log.LVL_SUB_DECISIONS);
+    //Log.Info(GSTown.GetName(this.id) + ": " + cargo_cat_text, Log.LVL_SUB_DECISIONS);
 
     return cargo_cat;
 }
@@ -1522,7 +1689,7 @@ function RandomizeRange(lower, upper, near_cargos, near_cargo_probability)
         cargo_cat_text += "] ";
     }
 
-    Log.Info(GSTown.GetName(this.id) + ": " + cargo_cat_text, Log.LVL_SUB_DECISIONS);
+    //Log.Info(GSTown.GetName(this.id) + ": " + cargo_cat_text, Log.LVL_SUB_DECISIONS);
 
     return cargo_cat;
 }
@@ -1584,7 +1751,7 @@ function RandomizePyramid(ascending, near_cargos, near_cargo_probability)
         cargo_cat_text += "] ";
     }
 
-    Log.Info(GSTown.GetName(this.id) + ": " + cargo_cat_text, Log.LVL_SUB_DECISIONS);
+    //Log.Info(GSTown.GetName(this.id) + ": " + cargo_cat_text, Log.LVL_SUB_DECISIONS);
 
     return cargo_cat;
 }

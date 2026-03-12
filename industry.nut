@@ -421,7 +421,7 @@ function RandomizeIndustry(ascending, near_industries, near_industry_probability
         }
     }
 
-    Log.Info(GSTown.GetName(this.id) + ":" + industry_cat_text, Log.LVL_SUB_DECISIONS);
+    //Log.Info(GSTown.GetName(this.id) + ":" + industry_cat_text, Log.LVL_SUB_DECISIONS);
 
     if (!ascending) {
         local category_reverse = [];

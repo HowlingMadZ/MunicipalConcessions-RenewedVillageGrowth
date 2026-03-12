@@ -328,7 +328,7 @@ function GoalTown::DebugRandomizationIndustry(categories)
             str += GSIndustryType.GetName(industry) + ",";
         }
     }
-    Log.Info(GSTown.GetName(this.id) + ": " + str, Log.LVL_SUB_DECISIONS);
+    //Log.Info(GSTown.GetName(this.id) + ": " + str, Log.LVL_SUB_DECISIONS);
 }
 
 function DebugTownIndustries(town_industries)
@@ -338,7 +338,7 @@ function DebugTownIndustries(town_industries)
         foreach (industry in industry_list) {
             industries_text += "    " + GSIndustry.GetName(industry) + ", ";
         }
-        Log.Info(GSTown.GetName(town) + ": " + industries_text, Log.LVL_DEBUG);
+        //Log.Info(GSTown.GetName(town) + ": " + industries_text, Log.LVL_DEBUG);
     }
 }
 
@@ -385,7 +385,7 @@ function DebugNearTownCargos(near_town_cargos)
             }
             cargos_text += "] ";
         }
-        Log.Info(GSTown.GetName(town) + ": " + cargos_text, Log.LVL_DEBUG);
+        //Log.Info(GSTown.GetName(town) + ": " + cargos_text, Log.LVL_DEBUG);
     }
 }
 
@@ -400,6 +400,6 @@ function DebugNearTownIndustryTypes(near_town_industry_types)
             }
             industry_text += "] ";
         }
-        Log.Info(GSTown.GetName(town) + ": " + industry_text, Log.LVL_DEBUG);
+        //Log.Info(GSTown.GetName(town) + ": " + industry_text, Log.LVL_DEBUG);
     }
 }
